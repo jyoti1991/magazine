@@ -8,17 +8,17 @@
 </head>
 <body>
 <header class="navbar navbar-default" role="navigation">
-<div class="navbar-inner">
-<div class="container" >
-<div id="navbar-brand">
-<nav class="collapse navbar-collapse navbar-ex1-collapse"
+<body>
+<div class="navbar navbar-default">
+<div class="navbar container">
+<div class="navbar-header">
+<%= link_to "Article Board",root_path, class:"navbar-brand" %>
 <% if current_user %>
 <ul class="nav navbar-nav navbar-right">
 <li><%= link_to 'Article Lists', articles_path  ,:class =>"btn btn-primary btn-sm active "%></li>
 <li><%= link_to 'EditAccount', edit_user_registration_path,:class =>"btn btn-primary btn-sm active" %></li>
 <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete ,:class =>"btn btn-primary btn-sm active"%></li>
 </ul>
-
 <% else -%>
 <ul class="nav navbar-nav pull-right">
 <ul class="nav navbar-nav pull-right">
@@ -31,6 +31,5 @@
 </div>
 </header>
 <%= yield %>
-
 </body>
 </html>

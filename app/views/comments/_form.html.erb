@@ -1,0 +1,7 @@
+<%= simple_form_for([@article, @article.comments.build]) do |f| %>
+<%= f.hidden_field :parent_id %>
+<%= f.hidden_field :article_id, :value => @article.id %>
+<%= f.input :commenter, lable:"Comment" %>
+<%= f.input :body %>
+<%= f.button :submit %>
+<% end %>

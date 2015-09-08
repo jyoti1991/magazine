@@ -1,0 +1,7 @@
+<h1>Edit comment</h1>
+<%= simple_form_for ([@article,@comment]) do |f| %>
+<%= f.input :commenter, lable:"Comment" %>
+<%= f.input :body %>
+<%= f.button :submit %>
+<% end %>
+<%= link_to 'Back', article_comments_path(@article) %>

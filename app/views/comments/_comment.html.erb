@@ -1,0 +1,11 @@
+<p><%= comment.commenter %></p>
+
+  <p class="text-muted"><%= comment.root? ? "Started by" : "Replied by" %> <strong><%= comment.user.present? ? comment.user.email : 'admin' %></strong> on
+    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+  <p><%= link_to 'reply', new_article_comment_path(@article) %></p>
+<% if user_signed_in? %>
+<% if comment.user_id == current_user.id %>
+<%= link_to "Edit Comment",edit_article_comment_path(@article,comment),class: "btn btn-default" %>
+<%= link_to "Delete Comment",article_comment_path(@article,comment),method: :delete,data: {confirm:"Are you sure want to delete think again"},class: "btn btn-default" %>
+<% end %>
+<% end %>

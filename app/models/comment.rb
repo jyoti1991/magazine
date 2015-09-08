@@ -1,3 +1,8 @@
 class Comment < ActiveRecord::Base
-belongs_to :article
-  end
+	 acts_as_tree order: 'created_at DESC'
+	 def to_digraph_label
+  commenter
+end   
+	    	  belongs_to :article
+  belongs_to :user
+ end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 resources :articles do
 resources :comments
+get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
 end
-root 'articles#new'
+root 'articles#index'
 end

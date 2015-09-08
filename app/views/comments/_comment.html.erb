@@ -1,5 +1,5 @@
 <p><%= comment.commenter %></p>
-
+<p><%= comment.body %></p>
   <p class="text-muted"><%= comment.root? ? "Started by" : "Replied by" %> <strong><%= comment.user.present? ? comment.user.email : 'admin' %></strong> on
     <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
   <p><%= link_to 'reply', new_article_comment_path(@article) %></p>

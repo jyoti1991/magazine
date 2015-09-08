@@ -12,12 +12,12 @@ end
 def create
  @comment=@article.comments.create(comment_params.merge(:user_id => current_user.id))
  @comment.user_id =current_user.id
-  if params[:comment][:parent_id].to_i > 0
-    parent = Comment.find_by_id(params[:comment].delete(:parent_id))
-    @comment = parent.children.build(comment_params)
-    else
-      @comment = Comment.new(comment_params)
-  end
+  #if params[:comment][:parent_id].to_i > 0
+    #parent = Comment.find_by_id(params[:comment].delete(:parent_id))
+   # @comment = parent.children.build(comment_params)
+    #else
+      #@comment = Comment.new(comment_params)
+ # end
    if @comment.save
     flash[:success] = 'Your comment was successfully added!'
     redirect_to article_path(@article)

@@ -1,9 +1,8 @@
-
 <div class="page-header">
 <% if user_signed_in? -%>
 <%= link_to 'New article', new_article_path %>
 <% end %>
-<h1>Listing In My Articles</h1>
+<h1>Listing In My Article</h1>
 </div>
  <table class="table table-striped">
   <thead>
@@ -13,8 +12,7 @@
     <th>Author</th>
   </tr>
   </thead>
- 
-  <% @articles.each do |article| %>
+ <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.body %></td>
